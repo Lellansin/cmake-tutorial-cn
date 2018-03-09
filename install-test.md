@@ -16,7 +16,29 @@ install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
          DESTINATION include)
 ```
 
-此时，你应该能够构建一下本教程的内容，在根目录输入 `make install`（或从 IDE 构建 INSTALL 目标）。这个命令会安装相应的头文件、库和可执行文件。CMake 的变量 CMAKE\_INSTALL\_PREFIX 用于确定文件安装位置的根目录。
+此时，你应该能够构建一下本教程的内容，在根目录输入 `make install`（或从 IDE 构建 INSTALL 目标）。这个命令会安装相应的头文件、库和可执行文件。CMake 的变量 CMAKE\_INSTALL\_PREFIX (默认值 Unix `/usr/local`, Win `c:/Program Files`) 用于确定文件安装位置的根目录。
+
+```bash
+# 安装命令
+$ make install
+Scanning dependencies of target MathFunctions
+[ 25%] Building CXX object MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o
+[ 50%] Linking CXX static library libMathFunctions.a
+[ 50%] Built target MathFunctions
+Scanning dependencies of target Tutorial
+[ 75%] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cxx.o
+[100%] Linking CXX executable Tutorial
+[100%] Built target Tutorial
+# 编译完开始安装
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/bin/Tutorial
+-- Installing: /usr/local/include/TutorialConfig.h
+-- Installing: /usr/local/bin/libMathFunctions.a
+-- Installing: /usr/local/include/MathFunctions.h
+
+# 上述目录即具体安装路径
+```
 
 增加测试也是一个相当直接的过程。在根目录 CMakeLists.txt 文件的结尾，我们可以添加许多基本测试来验证应用程序是否正常工作。
 
