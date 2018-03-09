@@ -21,7 +21,7 @@ check_function_exists (exp HAVE_EXP)
 
 在使用 TutorialConfig.h 的 configure\_file 命令之前完成 log 和 exp 的测试是很重要的。configure\_file 命令立即使用CMake中的当前设置来配置文件。最后，在 mysqrt 函数中，我们可以使用以下代码提供基于log和exp的备用实现：
 
-```cmake
+```c
 // 如果我们同时有内置的 log 和 exp，则使用它们
 #if defined (HAVE_LOG) && defined (HAVE_EXP)
   result = exp(log(x)*0.5);
