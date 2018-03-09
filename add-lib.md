@@ -28,15 +28,15 @@ option (USE_MYMATH
 这个配置项将在 CMake GUI 中显示，默认值为 ON，用户可以根据需要在面板上进行更改。设置后选项将存在缓存中，所以用户不用每次运行 CMake 时都再选一次。接下来的变化是使 MathFunctions 库的构建和链接有条件。为此，我们将根目录的 CMakeLists.txt 的结尾做如下更改：
 
 ```
-＃添加 MathFunctions 库吗？
-＃
+# 添加 MathFunctions 库吗？
+# 
 if (USE_MYMATH)
   include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
   add_subdirectory (MathFunctions)
   set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
 endif (USE_MYMATH)
 
-＃添加可执行文件
+# 添加可执行文件
 add_executable (Tutorial tutorial.cxx)
 target_link_libraries (Tutorial  ${EXTRA_LIBS})
 ```
