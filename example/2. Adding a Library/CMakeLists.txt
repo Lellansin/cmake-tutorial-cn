@@ -30,7 +30,4 @@ endif (USE_MYMATH)
 # 添加可执行文件
 add_executable (Tutorial tutorial.cxx)
 target_link_libraries (Tutorial  ${EXTRA_LIBS})
- 
-# add the executable
-add_executable(Tutorial tutorial.cxx)
 
