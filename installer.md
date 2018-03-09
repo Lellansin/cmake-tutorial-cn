@@ -5,7 +5,7 @@
 这与我们之前在 **安装和测试**（第3步）部分安装的内容有些不同，我们在这里还安装了源代码构建的二进制文件。在这个例子中，我们将实现一个在cygwin、debian、RPMs 等平台都能支持的二进制安装和包管理功能。为了达到这一点，我们将使用 **CPack** 创建特定于平台的安装程序，如使用 CPack 封装的章节中所述。具体而言，我们需要在根目录 CMakeLists.txt 文件的底部添加几行：
 
 ```
-＃构建一个CPack驱动的安装程序包
+# 构建一个CPack驱动的安装程序包
 include (InstallRequiredSystemLibraries)
 set (CPACK_RESOURCE_FILE_LICENSE  
      "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")

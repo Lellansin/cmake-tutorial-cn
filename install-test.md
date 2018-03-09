@@ -10,7 +10,7 @@ install (FILES MathFunctions.h DESTINATION include)
 对于应用程序，将以下行添加到根目录 CMakeLists.txt 文件中以安装可执行文件和配置的头文件：
 
 ```cmake
-＃添加安装目标
+# 添加安装目标
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
          DESTINATION include)
