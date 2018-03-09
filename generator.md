@@ -90,15 +90,13 @@ check_function_exists (exp HAVE_EXP)
 option(USE_MYMATH 
   "Use tutorial provided math implementation" ON)
 
-# configure a header file to pass some of the CMake settings
-# to the source code
+# 配置一个头文件来传递一些 CMake 设置到源代码
 configure_file (
   "${PROJECT_SOURCE_DIR}/TutorialConfig.h.in"
   "${PROJECT_BINARY_DIR}/TutorialConfig.h"
   )
 
-# add the binary tree to the search path for include files
-# so that we will find TutorialConfig.h
+# 将二叉树添加到包含文件的搜索路径以便我们找到 TutorialConfig.h
 include_directories ("${PROJECT_BINARY_DIR}")
 
 # add the MathFunctions library?
@@ -108,19 +106,19 @@ if (USE_MYMATH)
   set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
 endif (USE_MYMATH)
 
-# add the executable
+# 添加可执行文件
 add_executable (Tutorial tutorial.cxx)
 target_link_libraries (Tutorial  ${EXTRA_LIBS})
 
-# add the install targets
+# 添加 install 目标
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
          DESTINATION include)
 
-# does the application run
+# 判断 25 的 sqrt
 add_test (TutorialRuns Tutorial 25)
 
-# does the usage message work?
+# 判断的 usage 消息是否正常
 add_test (TutorialUsage Tutorial)
 set_tests_properties (TutorialUsage
   PROPERTIES 
@@ -128,7 +126,7 @@ set_tests_properties (TutorialUsage
   )
 
 
-#define a macro to simplify adding tests
+# 定义一个宏来简化添加测试的过程
 macro (do_test arg result)
   add_test (TutorialComp${arg} Tutorial ${arg})
   set_tests_properties (TutorialComp${arg}
@@ -136,7 +134,7 @@ macro (do_test arg result)
     )
 endmacro (do_test)
 
-# do a bunch of result based tests
+# 批量的根据 arg 和 result 来做测试
 do_test (4 "4 is 2")
 do_test (9 "9 is 3")
 do_test (5 "5 is 2.236")
@@ -154,7 +152,7 @@ TutorialConfig.h.in 如下所示：
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
 #cmakedefine USE_MYMATH
 
-// does the platform provide exp and log functions?
+// 该平台是否提供 exp 和 log 函数?
 #cmakedefine HAVE_LOG
 #cmakedefine HAVE_EXP
 ```
@@ -170,7 +168,7 @@ add_custom_command (
   DEPENDS MakeTable
   COMMAND MakeTable ${CMAKE_CURRENT_BINARY_DIR}/Table.h
   )
-#  binary tree directory 添加到 include 搜索路径中
+# binary tree directory 添加到 include 搜索路径中
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 # 添加 main 库
