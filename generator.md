@@ -146,7 +146,7 @@ do_test (0.0001 "0.0001 is 0.01")
 
 TutorialConfig.h.in 如下所示：
 
-```cmake
+```c
 // the configured options and settings for Tutorial
 #define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
