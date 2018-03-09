@@ -3,3 +3,8 @@
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
 
 #cmakedefine USE_MYMATH
+
+// 该平台是否提供 exp 和 log 函数?
+#cmakedefine HAVE_LOG
+#cmakedefine HAVE_EXP
+

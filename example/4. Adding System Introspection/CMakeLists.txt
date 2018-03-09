@@ -4,6 +4,11 @@ project (Tutorial)
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 
+# 这个系统是否提供 exp 和 log 函数？
+include (CheckFunctionExists)
+check_function_exists (log HAVE_LOG)
+check_function_exists (exp HAVE_EXP)
+
 # (扪心自问) 我们应该使用自实现的数学函数吗？
 option (USE_MYMATH 
         "Use tutorial provided math implementation" ON)
