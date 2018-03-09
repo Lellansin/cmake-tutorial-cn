@@ -53,4 +53,12 @@ endmacro (do_test)
 # 批量的根据 arg 和 result 来做测试
 do_test (25 "25 is 5")
 do_test (-25 "-25 is 0")
+# 批量的根据 arg 和 result 来做测试
+do_test (4 "4 is 2")
+do_test (9 "9 is 3")
+do_test (5 "5 is 2.236")
+do_test (7 "7 is 2.645")
+do_test (25 "25 is 5")
+do_test (-25 "-25 is 0")
+do_test (0.0001 "0.0001 is 0.01")
 
