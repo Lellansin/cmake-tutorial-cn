@@ -7,5 +7,5 @@
 * [4. 添加系统自检](introspection.md)
 * [5. 添加生成文件和生成器](generator.md)
 * [6. 构建安装程序](installer.md)
-* [7. Adding Support for a Dashboard](dashboard.md)
+* [7. 仪表盘支持](dashboard.md)
 
