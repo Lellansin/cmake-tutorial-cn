@@ -93,3 +93,6 @@ int main (int argc, char *argv[])
 
 主要变化是包含了 TutorialConfig.h 头文件，并在版本信息中打印出版本号。
 
+## 当前代码
+
+Github [Example 地址](https://github.com/Lellansin/cmake-tutorial-cn/tree/master/example/1.%20A%20Basic%20Starting%20Point)

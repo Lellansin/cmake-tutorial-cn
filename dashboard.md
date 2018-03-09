@@ -15,3 +15,6 @@ set (CTEST_PROJECT_NAME "Tutorial")
 
 运行时，CTest 将在此文件中读取。要创建一个简单的仪表板，您可以在您的项目上运行 CMake，将目录更改为二叉树，然后运行 `ctest -D Experimental`。仪表板的结果将上传到在 Kitware 的公用仪表板（[地址](http://www.cdash.org/CDash/index.php?project=PublicDashboard)）。
 
+## 当前代码
+
+Github [Example 地址](https://github.com/Lellansin/cmake-tutorial-cn/tree/master/example)

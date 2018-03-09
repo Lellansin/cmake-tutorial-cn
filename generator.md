@@ -178,5 +178,6 @@ install (TARGETS MathFunctions DESTINATION bin)
 install (FILES MathFunctions.h DESTINATION include)
 ```
 
+## 当前代码
 
-
+Github [Example 地址](https://github.com/Lellansin/cmake-tutorial-cn/tree/master/example/5.%20Adding%20a%20Generated%20File%20and%20Generator)
