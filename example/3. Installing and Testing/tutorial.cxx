@@ -26,8 +26,7 @@ int main (int argc, char *argv[])
   double outputValue = sqrt(inputValue);
 #endif
 
-  fprintf(stdout,"The square root of %g is %g\n",
-          inputValue, outputValue);
+  fprintf(stdout, "%g is %g", inputValue, outputValue);
   return 0;
 }
 

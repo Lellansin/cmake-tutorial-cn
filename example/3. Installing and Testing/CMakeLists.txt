@@ -36,3 +36,16 @@ install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
          DESTINATION include)
 
+include(CTest)
+
+# 定义一个宏来简化添加测试的过程
+macro (do_test arg result)
+  add_test (TutorialComp${arg} Tutorial ${arg})
+  set_tests_properties (TutorialComp${arg}
+    PROPERTIES PASS_REGULAR_EXPRESSION ${result})
+endmacro (do_test)
+
+# 批量的根据 arg 和 result 来做测试
+do_test (25 "25 is 5")
+do_test (-25 "-25 is 0")
+
