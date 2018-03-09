@@ -19,7 +19,7 @@ int main (int argc, char *argv[])
     return 1;
   }
 
-  // 打开输出的文件（文件名为参数2）
+  // 打开输出的文件 (文件名为参数2)
   FILE *fout = fopen(argv[1],"w");
   if (!fout)
   {
@@ -49,7 +49,7 @@ int main (int argc, char *argv[])
 add_executable(MakeTable MakeTable.cxx)
 
 # 添加命令以生成源代码
-add_custom_command（
+add_custom_command (
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Table.h
   COMMAND MakeTable ${CMAKE_CURRENT_BINARY_DIR}/Table.h
   DEPENDS MakeTable
@@ -57,7 +57,7 @@ add_custom_command（
 
 
 # 将 binary tree directory 添加到搜索路径中
-include_directories（$ {CMAKE_CURRENT_BINARY_DIR}）
+include_directories ($ {CMAKE_CURRENT_BINARY_DIR})
 
 # 添加 main 库
 add_library(MathFunctions mysqrt.cxx ${CMAKE_CURRENT_BINARY_DIR}/Table.h  )
