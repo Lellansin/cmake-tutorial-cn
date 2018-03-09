@@ -14,7 +14,7 @@ check_function_exists (exp HAVE_EXP)
 接下来，我们修改 TutorialConfig.h.in 的定义将这些检查的判断关联到项目中：
 
 ```cmake
-// 该平台是否提供exp和日志功能？
+// 该平台是否提供 exp 和 log 函数？
 #cmakedefine HAVE_LOG
 #cmakedefine HAVE_EXP
 ```
