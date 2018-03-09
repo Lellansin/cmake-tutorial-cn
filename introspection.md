@@ -5,7 +5,7 @@
 在这个例子中，我们将添加一些代码，取决于目标平台是否具有 log 和 exp 函数。当然，几乎每个平台都有这些功能，但本教程假定它们不太常用。如果平台有某函数，那么我们将在项目中使用它来。我们首先使用根目录 CMakeLists.txt 文件中的 CheckFunctionExists.cmake 这个宏来测试这些函数的可用性，如下所示：
 
 ```cmake
-# 这个系统是否提供日志和 exp 函数？
+# 这个系统是否提供 exp 和 log 函数？
 include (CheckFunctionExists)
 check_function_exists (log HAVE_LOG)
 check_function_exists (exp HAVE_EXP)
