@@ -2,7 +2,7 @@
 
 最简单的项目构建是从源代码文件构建一个可执行文件。而对于简单的项目，cmake 只需要两行的 CMakeLists.txt 文件即可。如下所示：
 
-```
+```cmake
 cmake_minimum_required (VERSION 2.6)
 project (Tutorial)
 add_executable(Tutorial tutorial.cxx)
@@ -10,7 +10,7 @@ add_executable(Tutorial tutorial.cxx)
 
 注意，这个示例在中的命令使用的是小写字母。实际上 CMake 中的命令是支持大写、小写和混合大小写的。下方 tutorial.cxx 的代码将计算一个数字的平方根，并且它的第一个版本非常简单：
 
-```
+```c
 //一个计算数字平方根的简单程序
 #include <stdio.h>
 #include <stdlib.h>
@@ -71,7 +71,7 @@ add_executable(Tutorial tutorial.cxx)
 #include <stdlib.h>
 #include <math.h>
 #include "TutorialConfig.h"
- 
+
 int main (int argc, char *argv[])
 {
   if (argc < 2)
