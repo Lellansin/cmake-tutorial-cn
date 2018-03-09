@@ -1,12 +1,12 @@
 ## 添加库
 
-现在我们将为我们的项目添加一个库（library）。这个库将包含我们自己的实现的计算数字平方根的功能。然后可执行文件可以使用这个库来代替编译器提供的标准平方根函数。对于本教程，我们将把该库放入名为MathFunctions的子目录中。它将具有以下一行CMakeLists.txt文件：
+现在我们将为我们的项目添加一个库 (library) 。这个库将包含我们自己的实现的计算数字平方根的功能。然后可执行文件可以使用这个库来代替编译器提供的标准平方根函数。对于本教程，我们将把该库放入名为MathFunctions的子目录中。它将具有以下一行CMakeLists.txt文件：
 
 ```cmake
-add_library（MathFunctions mysqrt.cxx）
+add_library (MathFunctions mysqrt.cxx) 
 ```
 
-源文件 mysqrt.cxx 有一个名为 mysqrt 的函数，它提供与编译器的 sqrt 函数类似的功能。为了使用新库，我们在顶层CMakeLists.txt 文件中添加一个 `add_subdirectory` 调用，以便库生成。我们还添加了另一个 include 目录，以便函数原型找到 MathFunctions/MathFunctions.h 头文件。最后一个更改是将新的库添加（link）到可执行文件。CMakeLists.txt 文件的最后几行如下所示：
+源文件 mysqrt.cxx 有一个名为 mysqrt 的函数，它提供与编译器的 sqrt 函数类似的功能。为了使用新库，我们在顶层CMakeLists.txt 文件中添加一个 `add_subdirectory` 调用，以便库生成。我们还添加了另一个 include 目录，以便函数原型找到 MathFunctions/MathFunctions.h 头文件。最后一个更改是将新的库添加 (link) 到可执行文件。CMakeLists.txt 文件的最后几行如下所示：
 
 ```cmake
 include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
@@ -41,7 +41,7 @@ add_executable (Tutorial tutorial.cxx)
 target_link_libraries (Tutorial  ${EXTRA_LIBS})
 ```
 
-现在这里使用了 USE\_MYMATH 的设置来确定是否要应编译和使用 MathFunctions。请注意使用变量（本例为`EXTRA_LIBS`）来收集任何可选的库，以便以后将其链接到可执行文件中。这是一种常用的方法，用于保持包含许多可选组件的较大项目的清洁。源代码的相应更改则非常直截了当：
+现在这里使用了 USE\_MYMATH 的设置来确定是否要应编译和使用 MathFunctions。请注意使用变量 (本例为`EXTRA_LIBS`) 来收集任何可选的库，以便以后将其链接到可执行文件中。这是一种常用的方法，用于保持包含许多可选组件的较大项目的清洁。源代码的相应更改则非常直截了当：
 
 ```c
 //一个计算数字平方根的简单程序
