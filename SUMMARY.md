@@ -6,6 +6,6 @@
 * [3. 安装和测试](install-test.md)
 * [4. 添加系统自检](introspection.md)
 * [5. 添加生成文件和生成器](generator.md)
-* [6. Building an Installer](installer.md)
+* [6. 构建安装程序](installer.md)
 * [7. Adding Support for a Dashboard](dashboard.md)
 
